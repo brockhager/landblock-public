@@ -51,6 +51,9 @@ Implementation details remain private.
 - [Whitepaper](WHITEPAPER.md)
 - [Vision](docs/vision.md)
 - [Design Principles](docs/principles.md)
+- [Conceptual Architecture](docs/architecture.md)
+- [FAQ](docs/faq.md)
+- [Public Documentation Scope](docs/public-documentation-scope.md)
 - [Roadmap](ROADMAP.md)
 
 ---
