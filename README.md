@@ -52,6 +52,8 @@ Implementation details remain private.
 - [Vision](docs/vision.md)
 - [Design Principles](docs/principles.md)
 - [Conceptual Architecture](docs/architecture.md)
+- [DAO, Courts, and Nations](docs/dao-vs-courts-and-nations.md)
+- [Governance Executive Brief](docs/governance-executive-brief.md)
 - [FAQ](docs/faq.md)
 - [Public Documentation Scope](docs/public-documentation-scope.md)
 - [Roadmap](ROADMAP.md)
