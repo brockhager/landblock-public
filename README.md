@@ -48,17 +48,37 @@ Implementation details remain private.
 
 ## Learn More
 
+- [README](README.md)
+- [Contributing](CONTRIBUTING.md)
+- [Security](SECURITY.md)
+- [License](LICENSE)
+- [Roadmap](ROADMAP.md)
 - [Whitepaper](WHITEPAPER.md)
+
+### Core Documentation
+
 - [Vision](docs/vision.md)
 - [Design Principles](docs/principles.md)
 - [Conceptual Architecture](docs/architecture.md)
-- [Architecture & Strategy](docs/architecture-strategy.md)
+- [Architecture and Strategy](docs/architecture-strategy.md)
 - [Governance](docs/governance.md)
-- [DAO, Courts, and Nations](docs/dao-vs-courts-and-nations.md)
 - [Governance Executive Brief](docs/governance-executive-brief.md)
+- [DAO vs Courts and Nations](docs/dao-vs-courts-and-nations.md)
 - [FAQ](docs/faq.md)
 - [Public Documentation Scope](docs/public-documentation-scope.md)
-- [Roadmap](ROADMAP.md)
+
+### Learning Path
+
+- [Learning Path Overview](docs/learn/README.md)
+- [01: What Is Landblock](docs/learn/01-what-is-landblock.md)
+- [02: Core Concepts](docs/learn/02-core-concepts.md)
+- [03: How Landblock Works](docs/learn/03-how-landblock-works.md)
+- [04: Modules and Apps](docs/learn/04-modules-and-apps.md)
+- [05: Common Questions](docs/learn/05-common-questions.md)
+- [06: Trust, Security, and Governance Basics](docs/learn/06-trust-security-and-governance.md)
+- [07: Example Land Transfer Walkthrough](docs/learn/07-example-land-transfer-walkthrough.md)
+- [08: Key Terms Glossary](docs/learn/08-key-terms-glossary.md)
+- [09: Your First Week on Landblock](docs/learn/09-your-first-week-on-landblock.md)
 
 ---
 
