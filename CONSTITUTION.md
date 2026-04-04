@@ -71,6 +71,6 @@ The **LDBK** token represents the governance and utility asset of the Landblock 
 ## Signatures (Founding Stewards)
 *By signing this document, the stewards irrevocably commit the Landblock Protocol to the neutrality and boundary definitions contained herein.*
 
-- [ ] **Steward 1:** ___________________________  Date: __________
-- [ ] **Steward 2:** ___________________________  Date: __________
-- [ ] **Steward 3:** ___________________________  Date: __________
+- [ ] **Steward 1:** ___Brock Hager_____________  Date: _04-03-2026_
+- [ ] **Steward 2:** ___________________________  Date: ____________
+- [ ] **Steward 3:** ___________________________  Date: ____________
