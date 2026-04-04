@@ -1,13 +1,22 @@
 # The Landblock Protocol Governance Constitution
 **Phase 1: Proto-DAO Foundation**
 
+---
+
+## Article 0: Foundational Purpose (Immutable)
+
+### Landblock Foundational Purpose
+Landblock provides an immutable, auditable **cryptographic verification layer** for land records, enabling governments to mirror, verify, and selectively adopt blockchain-based integrity guarantees without disrupting existing legal authority or administrative workflows.
+
+### Governing Principle (Non-Negotiable)
+1. **Sovereignty**: The authoritative land registry remains unchanged and sovereign.
+2. **Role**: Blockchain provides verification, resilience, and transparency—not governance of the land itself.
+3. **Immutability**: This Article is non-revisable and serves as the highest-level constraint for all protocol development.
+
+---
+
 ## Preamble: The Governing Principle
 Courts and governments decide what is true about land. The Landblock Protocol DAO decides only how truth can be recorded. These domains must never overlap.
-
-The Landblock Protocol DAO operates akin to an internet standards body (like the IETF). It does not control the content or validity of what is recorded; it builds, maintains, and governs the neutral, open infrastructure and protocols that enable those records to exist predictably and securely.
-
-### Plain-Language Declaration of Neutrality
-*"Landblock does not replace courts or governments. Courts decide land. Governments decide policy. Landblock governance is limited to the neutral, open infrastructure and standards used to record those decisions."*
 
 ---
 
@@ -71,6 +80,4 @@ The **LDBK** token represents the governance and utility asset of the Landblock 
 ## Signatures (Founding Stewards)
 *By signing this document, the stewards irrevocably commit the Landblock Protocol to the neutrality and boundary definitions contained herein.*
 
-- [ ] **Steward 1:** ___Brock Hager_____________  Date: _04-03-2026_
-- [ ] **Steward 2:** ___________________________  Date: ____________
-- [ ] **Steward 3:** ___________________________  Date: ____________
+- [x] **Steward 1:** ___Brock Hager_____________  Date: _04-03-2026_
