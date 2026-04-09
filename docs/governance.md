@@ -61,9 +61,13 @@ Governance exists above infrastructure decisions, not above law.
 
 ---
 
-## Tooling Today, Portability Tomorrow
+## Current Governance Structure
 
-### Why Landblock Starts With Aragon
+- **Founding Multisig**: Live on Polygon Amoy, handles initial setup and transitions.
+- **Constitution**: Ratified, defines governance principles and constraints.
+- **DAO Transition**: Planned migration to Aragon DAO with neutrality constraints to ensure protocol rules govern infrastructure, not land ownership.
+
+---
 
 Landblock currently explores governance tooling on Aragon because it provides
 mature, well-audited governance components suitable for early protocol

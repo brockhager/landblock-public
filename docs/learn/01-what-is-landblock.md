@@ -1,26 +1,29 @@
 # What Is Landblock?
 
-Landblock is a digital land registry platform.
+Landblock is a decentralized land registry verification protocol. It does not replace governments, courts, or land offices. Instead, it gives them a cryptographic mirror of land records so anyone can verify integrity, history, and tamper‑resistance without challenging legal authority.
 
-In simple terms, it helps record who owns what land, what evidence supports that ownership, and what changes happen over time.
+## The Core Idea
 
-## The problem it addresses
+Blockchain verifies records; governments decide ownership.
 
-Traditional land systems often struggle with:
+Landblock provides an append‑only, auditable record of land claims, evidence, identities, and disputes. Governments can adopt it incrementally (Mirror Mode first), preserving sovereignty while gaining transparency and trust guarantees.
 
-- Slow, manual processing
-- Fragmented records
-- Fraud risk from document tampering
-- Low trust between parties when records are hard to verify
+## What Makes Landblock Distinct
 
-## The Landblock approach
+1. **Verification Over Authority**
+   - Blockchain never decides who owns land
+   - Courts and governments remain the sole source of legal truth
+   - Landblock proves what was recorded, when, and by whom
 
-Landblock uses a modern protocol and application stack to make land records:
+2. **Government‑Compatible by Design**
+   - Mirror Mode allows registries to publish cryptographic proofs daily
+   - No workflow disruption, no forced tokenization, no governance takeover
+   - Selective adoption: verify first, adopt later
 
-- More transparent
-- More traceable
-- Harder to alter without authorization
-- Easier to review by authorized participants
+3. **Immutable Claims, Not Mutable State**
+   - Append‑only parcel assertions
+   - Disputes recorded as lifecycle events
+   - Evidence stored off‑chain (IPFS) but cryptographically bound on‑chain
 
 ## What Landblock is not
 

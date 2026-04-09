@@ -1,7 +1,10 @@
 # Landblock
 
-Landblock is a project focused on solving fundamental problems around land, ownership,
-and coordination in a transparent and resilient way.
+Landblock is a decentralized land registry verification protocol. It does not replace governments, courts, or land offices. Instead, it gives them a cryptographic mirror of land records so anyone can verify integrity, history, and tamper‑resistance without challenging legal authority.
+
+Core idea: Blockchain verifies records; governments decide ownership.
+
+Landblock provides an append‑only, auditable record of land claims, evidence, identities, and disputes on Polygon PoS. Governments can adopt it incrementally (Mirror Mode first), preserving sovereignty while gaining transparency and trust guarantees.
 
 This repository contains **public information only** — including vision, principles,
 and high-level documentation. The core implementation is developed in a private
@@ -9,15 +12,22 @@ repository and is not open source.
 
 ---
 
-## Why Landblock Exists
+## What Makes Landblock Distinct
 
-Land ownership and land-use coordination are foundational to society, yet existing
-systems are often opaque, fragmented, and difficult to reason about at scale.
+1. **Verification Over Authority**
+   Blockchain never decides who owns land
+   Courts and governments remain the sole source of legal truth
+   Landblock proves what was recorded, when, and by whom
 
-Landblock explores new ways to:
-- Improve clarity around land-related information
-- Reduce friction in coordination
-- Design systems that are resilient over long time horizons
+2. **Government‑Compatible by Design**
+   Mirror Mode allows registries to publish cryptographic proofs daily
+   No workflow disruption, no forced tokenization, no governance takeover
+   Selective adoption: verify first, adopt later
+
+3. **Immutable Claims, Not Mutable State**
+   Append‑only parcel assertions
+   Disputes recorded as lifecycle events
+   Evidence stored off‑chain (IPFS) but cryptographically bound on‑chain
 
 ---
 
@@ -41,10 +51,31 @@ Landblock explores new ways to:
 
 Landblock is under active development.
 
+**✅ Completed**
+- Governance constitution ratified
+- Founding multisig live on Polygon Amoy
+- 8 of 13 foundational ADRs accepted
+- Phase 1–2 complete
+
+**🔄 Active (Critical Path)**
+- Phase 3: Final 5 foundational ADRs (0009–0016)
+- Phase 4: Turborepo monorepo scaffolding
+- Foundry test environment stabilization
+- Indexer + offline sync design
+
+**⏭️ Next Major Gates**
+- Testnet contract deployment sequence
+- Independent security audit
+- Mainnet launch
+- Government pilot (Mirror Mode)
+- Aragon DAO activation
+
 Public materials may evolve as the project matures.  
 Implementation details remain private.
 
 ---
+
+## Learn More
 
 ## Learn More
 

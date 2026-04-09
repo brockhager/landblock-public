@@ -2,6 +2,8 @@
 
 ## Abstract
 
+Landblock is a blockchain protocol that lets governments cryptographically verify land records without giving up authority or changing how land ownership is decided.
+
 Landblock is a research and development project exploring new approaches to land,
 ownership representation, and coordination systems.
 

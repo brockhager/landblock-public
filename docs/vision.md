@@ -37,6 +37,12 @@ systems that are more legible, more durable, and easier to coordinate around.
 
 ---
 
+## What Success Looks Like
+
+A government publishes daily land registry proofs to Landblock. Anyone can independently verify registry integrity. Non‑developers can register parcels. Property can be tokenized without undermining sovereignty. DAO governs protocol rules, not land ownership.
+
+---
+
 ## Public Framing
 
 Landblock should be understood as an evolving research and development effort.
