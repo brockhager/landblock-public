@@ -1,64 +1,31 @@
 # Your First Week on Landblock
 
-This page helps a new contributor move from reading to productive participation.
+Welcome to the Landblock community! Whether you're a citizen, a surveyor, a registry official, or a steward, your first week is about understanding the protocol and establishing your digital presence.
 
-## Day 1: Understand the mission and vocabulary
+## Day 1: Understanding the Protocol
+Read the [Core Concepts](02-core-concepts.md) and understand the LADM data model (`SpatialUnit → BAUnit → RRR → Party`). Remember that Landblock is a verification and federation layer, not a legal authority. The [Design Invariants](../../03-design/DESIGN-INVARIANTS.md) define what the protocol will never do.
 
-- Read the learning path from 01 to 08
-- Keep the glossary open while reading technical docs
-- Write down questions about terms, flows, or ownership lifecycle
+## Day 2: Create Your Identity
+Download the **Register App** and create your **Tier 1 (Self-Asserted) DID** via SpruceID. This is your digital identity for everything on the platform. Your DID is registered in `IdentityRegistry.sol` — no cryptocurrency needed thanks to the ERC-4337 Paymaster.
 
-## Day 2: Learn the repository layout
+## Day 3: Explore Your Neighborhood
+Use the **Explorer App** to see what land in your area is already anchored to the protocol. Check the audit trails for existing SpatialUnits to see how the system handles proof-of-state. Notice how records show attestation tiers (Tier 1/2/3) and temporal history.
 
-- Review high-level architecture in ../architecture.md
-- Review contribution workflow in ../../CONTRIBUTING.md
-- Identify where apps, services, and packages live in the repo
+## Day 4: Record Your First Witness Attestation
+If you're a neighbor, you can act as a **Tier 2 Witness** for someone else's land claim. By signing an attestation, you help your community move toward higher-trust records. Three community witnesses are needed to upgrade a claim from Tier 1 to Tier 2.
 
-## Day 3: Set up your local environment
+## Day 5: Submit Evidence
+If you have a formal government deed or survey, submit it as **Evidence** through the Register App. The file is stored on IPFS/Filecoin and a CID is anchored via `EvidenceStore.sol`. In jurisdictions at Tier 2+ conformance, an **Authority Verifier** can then upgrade your identity to **Tier 3 (Verified)**.
 
-- Install prerequisites
-- Configure environment variables from templates
-- Run local services and verify the development server starts
+## Day 6: Explore Tokenization and Privacy
+- Log into the **Investor App** to see how BAUnit shares can be fractionalized using `PropertyToken.sol`.
+- Try the **Privacy Verifier** app to see how zero-knowledge proofs let you verify claims without exposing underlying data.
 
-## Day 4: Trace one end-to-end workflow
-
-Pick a simple workflow (for example, record lookup or transfer preparation) and map:
-
-- Which app starts the workflow
-- Which service/API handles orchestration
-- Which protocol modules are involved
-- What output or state change is produced
-
-## Day 5: Make a safe first contribution
-
-Good first contribution ideas:
-
-- Improve docs clarity
-- Add tests for existing behavior
-- Refactor a small, low-risk module with no behavior change
-- Improve validation/error messaging
-
-## Questions to ask maintainers early
-
-If you are in the open-source community (not an internal team), ask maintainers these questions early:
-
-- Which workflows are highest priority right now?
-- What coding and review standards are mandatory?
-- Which areas are stable vs evolving rapidly?
-- How are incidents, disputes, or exceptions handled operationally?
-
-## Success criteria for week one
-
-By the end of week one, you should be able to:
-
-- Explain Landblock at a high level in plain language
-- Name core modules and front-end apps and their roles
-- Navigate the repository confidently
-- Run the project locally
-- Submit one small, reviewed change
+## Day 7: Understand Governance
+Read the [Constitution](../../07-governance/constitution/CONSTITUTION_v0.4.5.md) to understand what the DAO governs (protocol software, schemas, evidence standards) and what it explicitly does not (land ownership, disputes, legal outcomes). Follow the Founding Stewards and consider how you might participate as the protocol transitions to LGT-based Aragon DAO governance.
 
 ---
 
 Previous: [Key Terms Glossary](08-key-terms-glossary.md)
 
-Start over: [Landblock Learning Path](README.md)
+Next: [Learn Index](README.md)

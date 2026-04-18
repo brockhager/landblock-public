@@ -1,37 +1,41 @@
 # What Is Landblock?
 
-Landblock is a decentralized land registry verification protocol. It does not replace governments, courts, or land offices. Instead, it gives them a cryptographic mirror of land records so anyone can verify integrity, history, and tamper‑resistance without challenging legal authority.
+Landblock is a blockchain-based **federation protocol for land registries** — a shared trust layer that allows registries worldwide to publish cryptographic proofs, verify each other's records, and cooperate across jurisdictions without surrendering sovereignty.
 
-## The Core Idea
+In simple terms, it helps record who owns what land and what evidence supports that ownership — without ever replacing the legal authority of governments or courts. Registries keep their authority; Landblock provides the interoperability infrastructure.
 
-Blockchain verifies records; governments decide ownership.
+## The Problem
 
-Landblock provides an append‑only, auditable record of land claims, evidence, identities, and disputes. Governments can adopt it incrementally (Mirror Mode first), preserving sovereignty while gaining transparency and trust guarantees.
+Traditional land systems often struggle with:
+- **Tamper Risk**: Paper records can be altered, lost, or forged.
+- **Fragmented Data**: Information is stuck in silos and hard to verify across borders. 70%+ of Africa's land is informally held; fraud occurs in 30% of transactions in emerging markets.
+- **Low Trust**: High friction and fraud risk when records aren't transparently verifiable. 60% of Indian court cases involve land disputes; $6T+ in dead capital exists in Latin America alone.
 
-## What Makes Landblock Distinct
+## The Landblock Approach
 
-1. **Verification Over Authority**
-   - Blockchain never decides who owns land
-   - Courts and governments remain the sole source of legal truth
-   - Landblock proves what was recorded, when, and by whom
+Landblock provides a three-layer federation architecture:
 
-2. **Government‑Compatible by Design**
-   - Mirror Mode allows registries to publish cryptographic proofs daily
-   - No workflow disruption, no forced tokenization, no governance takeover
-   - Selective adoption: verify first, adopt later
+1. **Global Directory** — A shared on-chain registry of registries, so any participant can discover and verify any other.
+2. **Federation Protocol** — Cross-registry verification and proof exchange without semantic harmonization.
+3. **Registry Layer** — Each existing registry (or a new one using the Landblock Registry Template) publishes cryptographic proofs of its records.
 
-3. **Immutable Claims, Not Mutable State**
-   - Append‑only parcel assertions
-   - Disputes recorded as lifecycle events
-   - Evidence stored off‑chain (IPFS) but cryptographically bound on‑chain
+All of this runs on **Polygon PoS** with ~2-second finality and near-zero fees, using **Solidity** smart contracts that comply with the **ISO 19152 LADM** international land administration standard.
 
-## What Landblock is not
+Records on Landblock are:
+- **Immutable**: Once a record is "anchored" to the blockchain, it cannot be secretly altered.
+- **Verifiable**: Anyone with permission can check the cryptographic proof of a claim.
+- **Private**: Only cryptographic commitments (hashes) are stored on-chain. Sensitive PII and land geometry stay off-chain under sovereign control.
 
-- It is not a magic replacement for legal systems
-- It does not remove the need for governance and policy
-- It does not guarantee all real-world disputes disappear
+## What Landblock Is NOT
 
-Landblock provides technical trust and process structure. Legal and institutional adoption still matters.
+- **Not a replacement for courts**: Courts still decide who "owns" land.
+- **Not a sovereign database**: Governments still maintain their own private records.
+- **Not a legal authority**: The protocol never assumes governance, adjudication, or enforcement authority.
+- **Not a title issuance system**: Landblock records attestations, not legal title.
+
+Landblock provides **technical trust** so that institutions can focus on **legal truth**.
+
+> "Adopting Landblock does not require you to trust the blockchain; it only requires you to publish your attestations to it."
 
 ---
 

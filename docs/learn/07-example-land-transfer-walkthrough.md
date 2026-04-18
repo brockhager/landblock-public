@@ -1,63 +1,47 @@
 # Example Land Transfer Walkthrough
 
-This page gives a beginner-friendly scenario showing how Landblock components work together.
+This guide shows how Landblock's apps and contracts work together in a property transaction, following the LADM traversal path: **SpatialUnit → BAUnit → RRR → Party**.
 
-## Scenario
+## The Story: Alice Sells 50% to Bob
 
-A seller wants to transfer ownership of a parcel to a buyer.
+### 1. Identity Registration (Party)
+Alice uses the **Register App** to create her **Tier 1 Identity** (DID) via SpruceID. She uploads a photo of her ID card, which is converted into a **CID** (fingerprint) and anchored on-chain via `EvidenceStore.sol`. Her DID is registered in `IdentityRegistry.sol`.
 
-## Step 1: Identities are verified
+### 2. Parcel Recording (SpatialUnit)
+Alice records her parcel geometry using GPS in the Register App. The app calculates a **Boundary Hash** and generates a **Coords L1 URI** — the immutable spatial identifier. These are registered in `SpatialUnitRegistry.sol`. The actual coordinates stay off-chain.
 
-Both parties use trusted identities so the system can verify who is submitting and approving actions.
+### 3. Administrative Unit (BAUnit)
+A **BAUnit** is created in `BAUnitRegistry.sol` to represent the legal grouping of Alice's SpatialUnit. This is the entity that rights will be attached to — not the SpatialUnit directly.
 
-Related module: `landblock.identity`
+### 4. Rights Assignment (RRR)
+Alice's ownership right is recorded as an RRR in `RRRRegistry.sol`, linking her Party (DID) to her BAUnit with a 100% share.
 
-## Step 2: Parcel record is retrieved
+### 5. Authority Verification
+An **Authority Verifier** (e.g., a local NGO surveyor) reviews Alice's evidence in the Explorer App. Once satisfied, they sign a transaction that promotes Alice's identity to **Tier 3 (Verified)** in `IdentityRegistry.sol`. Her evidence CIDs are attested in `EvidenceStore.sol`.
 
-The current parcel state is loaded, including ownership status and linked records.
+### 6. Discovery (Bob)
+Bob uses the **Explorer App** to browse for property. He sees Alice's parcel is **Authority-Verified** (Tier 3). Since coordinates are off-chain, the map shows a generalized area until Bob requests access to view the exact boundary through the privacy-preserving disclosure flow.
 
-Related module: `landblock.parcel-registry`
+### 7. Fractionalization (Transfer)
+Instead of selling the whole parcel, Alice decides to sell Bob a **50% share**:
+- `PropertyToken.sol` mints 100 fungible shares (ERC-1155) linked to Alice's BAUnit.
+- 50 shares are transferred from Alice's DID to Bob's DID.
+- `RRRRegistry.sol` is updated: Alice 50%, Bob 50%. The contract enforces that shares never exceed 100% + 1bps.
 
-## Step 3: Evidence is attached
+### 8. Dispute Check
+`DisputeRecord.sol` checks for any active overlapping claims on the SpatialUnit. If clear, the transaction finalizes on Polygon PoS (~2s finality). If a dispute exists, the transfer is blocked until the off-chain authority resolves it.
 
-Required documents for the transfer are uploaded and linked to the process.
+### 9. Settlement
+The entire transaction is sponsored by `LandblockPaymaster.sol` via ERC-4337 — neither Alice nor Bob needed to hold cryptocurrency to complete it.
 
-Related module: `landblock.evidence-store`
-
-## Step 4: Transfer action is submitted
-
-A state transition is requested to reflect ownership change according to policy rules.
-
-Related module: `landblock.property-token`
-
-## Step 5: Fees are handled
-
-Transaction fees are processed through supported fee workflows.
-
-Related module: `landblock.gas-station`
-
-## Step 6: Dispute path remains available
-
-If any party contests details, the case can move into a formal dispute process.
-
-Related module: `landblock.dispute-record`
-
-## Step 7: Result is visible in apps
-
-Authorized users can view updated state and history through front-end applications.
-
-- Landblock Register for workflow operations
-- Landblock Explorer for record visibility
-- Landblock Investor for investor-oriented views
-
-## Why this matters
-
-This flow shows how identity, parcel state, evidence, governance, and transaction handling connect to create traceable ownership updates.
+### 10. View Results
+- Bob sees his **50% share** in his **Investor App** portfolio.
+- Alice sees her remaining 50% in her **Register App**.
+- Both records are visible (with appropriate access controls) in the **Explorer App**.
+- The full LADM traversal is intact: `SpatialUnit → BAUnit → RRR → Party` for both Alice and Bob.
 
 ---
 
-Previous: [Trust, Security, and Governance Basics](06-trust-security-and-governance.md)
+Previous: [Trust, Security, and Governance](06-trust-security-and-governance.md)
 
 Next: [Key Terms Glossary](08-key-terms-glossary.md)
-
-Start over: [Landblock Learning Path](README.md)

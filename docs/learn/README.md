@@ -1,35 +1,34 @@
-# Landblock Learning Path
+# Landblock Academy
 
-This section is a beginner-friendly guide to what Landblock is and how it works.
+Welcome to the **Learn** section of the Landblock Core repository. These documents provide a beginner-friendly introduction to the protocol, its concepts, and how to participate in the decentralized land registry federation.
 
-Start here if you are new to the project.
+---
 
-## Who this is for
+## 📚 Learning Path
 
-- New contributors
-- Non-technical stakeholders
-- Technical contributors who need a fast orientation
+| # | Topic | Key Insight |
+| :--- | :--- | :--- |
+| **01** | [What Is Landblock?](01-what-is-landblock.md) | A neutral digital verification layer and federation protocol for land records. |
+| **02** | [Core Concepts](02-core-concepts.md) | The LADM data model: SpatialUnits, BAUnits, RRRs, Parties, and Evidence. |
+| **03** | [How Landblock Works](03-how-landblock-works.md) | The three conformance tiers: Mirror → Verified → Full. |
+| **04** | [Modules and Apps](04-modules-and-apps.md) | 21 Solidity contracts and 4 front-end applications. |
+| **05** | [Common Questions](05-common-questions.md) | FAQs on privacy, costs, and government adoption. |
+| **06** | [Trust & Governance](06-trust-security-and-governance.md) | Foundry-verified contracts and steward governance. |
+| **07** | [Example Walkthrough](07-example-land-transfer-walkthrough.md) | A step-by-step property transaction through the LADM model. |
+| **08** | [Key Terms Glossary](08-key-terms-glossary.md) | Fast-track your Landblock vocabulary. |
+| **09** | [Your First Week](09-your-first-week-on-landblock.md) | A guide to your first 7 days on the platform. |
 
-## Suggested reading order
+---
 
-1. [What Is Landblock?](01-what-is-landblock.md)
-2. [Core Concepts](02-core-concepts.md)
-3. [How Landblock Works](03-how-landblock-works.md)
-4. [Modules and Apps](04-modules-and-apps.md)
-5. [Common Questions](05-common-questions.md)
-6. [Trust, Security, and Governance Basics](06-trust-security-and-governance.md)
-7. [Example Land Transfer Walkthrough](07-example-land-transfer-walkthrough.md)
-8. [Key Terms Glossary](08-key-terms-glossary.md)
-9. [Your First Week on Landblock](09-your-first-week-on-landblock.md)
+## 🏛️ Governance
 
-## Quick summary
+Landblock is a mission-driven protocol governed by its **Constitution** and the **Founding Steward Multi-Sig** (Gnosis Safe on Polygon PoS). The governance path runs from the current Proto-DAO through an Aragon DAO transition with LGT token voting, and ultimately to full on-chain governance. Trust is established not by a single authority, but by the mathematical security of the Polygon PoS blockchain, the LADM-compliant data model, and the transparency of the audit trail.
 
-Landblock is a platform for recording and managing land rights with a tamper-resistant digital system. It combines:
+---
 
-- Protocol modules for identity, parcels, evidence, disputes, tokenized property, and transaction fee handling
-- Front-end applications for different user groups
-- Backend and infrastructure layers that support verification, security, and operations
+## 🔍 Navigation
 
-## Important note
-
-Landblock Core is under active development. Names and behaviors may evolve as architecture and product decisions are finalized.
+- [Go to Architecture Overview](../../03-design/architecture/overview.md)
+- [Go to Decision Records (ADRs)](../../05-decisions/README.md)
+- [Go to Implementation Guide](../../04-implementation/README.md)
+- [Go to Whitepaper](../../whitepaper/01-introduction.md)

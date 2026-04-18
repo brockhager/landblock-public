@@ -1,47 +1,66 @@
 # Modules and Apps
 
-This page is the canonical beginner map of named protocol modules and front-end applications.
+This page maps the protocol's smart contracts (L1) and front-end applications (L4).
 
-## Core Protocol Modules
+## Core Protocol Contracts (L1 — Solidity on Polygon PoS)
 
-The protocol consists of 9 Solidity modules:
+Landblock has 21 Solidity contracts organized by the LADM data model:
 
-1. Registry
-Purpose: Maintains parcel records and parcel lifecycle state.
+### LADM Core Registries
+| Contract | Purpose |
+| :--- | :--- |
+| `SpatialUnitRegistry.sol` | Records spatial units (parcels) as boundary hashes with Coords URIs. |
+| `BAUnitRegistry.sol` | Manages Basic Administrative Units — the legal grouping that mediates between land and rights. |
+| `RRRRegistry.sol` | Rights, Restrictions, and Responsibilities attached to BAUnits. Enforces share ≤ 100% + 1bps. |
+| `IdentityRegistry.sol` | SpruceID DID management with Tier 1–3 identity attestations and cross-registry resolution. |
+| `EvidenceStore.sol` | Registry of CIDs linking records to off-chain documents (deeds, surveys, photos). |
 
-2. Identity
-Purpose: Handles trusted identity representation and related verification hooks. Uses SpruceID DIDs with tiered attestations.
+### Federation & Directory
+| Contract | Purpose |
+| :--- | :--- |
+| `RegistryDirectory.sol` | On-chain registry of registries — the Global Directory for federation discovery. |
+| `Federation.sol` | Cross-registry proof exchange and verification protocol. |
+| `CoordsValidator.sol` | Validates L1 coordinate URI format for spatial identity (CC0 spec, OGC compliant). |
 
-3. Evidence
-Purpose: Stores and links evidence artifacts used in claims and reviews. Evidence stored off‑chain (IPFS) but cryptographically bound on‑chain.
+### Governance & Tokens
+| Contract | Purpose |
+| :--- | :--- |
+| `LandblockGovernance.sol` | Protocol governance: proposals, voting, and administrative controls. |
+| `LDBKToken.sol` | LDBK utility token (21M fixed supply, 8 decimals). Used for fees, staking, liquidity. No governance voting. |
+| `LGTToken.sol` | LGT governance token (100M initial supply, 18 decimals). Used for DAO proposals, voting, and treasury. |
+| `PropertyToken.sol` | ERC-721 / ERC-1155 for fractional ownership shares of BAUnits. |
 
-4. Disputes
-Purpose: Tracks disputes, statuses, and associated records. Disputes recorded as lifecycle events.
+### Operations
+| Contract | Purpose |
+| :--- | :--- |
+| `DisputeRecord.sol` | Lifecycle management for overlapping claims and authority rulings. |
+| `LandblockPaymaster.sol` | ERC-4337 Account Abstraction paymaster — sponsors gas so users don't need cryptocurrency. |
+| `PrivacyVerifier.sol` | ZKP-based selective disclosure for identity and record verification. |
 
-5. Tokens
-Purpose: Represents property rights/state in tokenized form within the protocol model.
+Plus interface contracts (`ISpatialUnitRegistry`, `IBAUnitRegistry`, `IRRRRegistry`, `IRegistryDirectory`, `IPausable`) and `DummyAdminSurface.sol` for testing.
 
-6. Gas Station
-Purpose: Supports transaction fee handling and smoother user operations for supported flows.
+## Front-End Applications (L4)
 
-Additional modules handle governance, indexing, and other core functions.
+### 1. Landblock Register (Mobile)
+- **Tech**: React Native / Expo
+- **Purpose**: Field application for recording GPS, community evidence, and offline forms. Offline-first with sync.
 
-## Front-End Applications
+### 2. Landblock Explorer (Web)
+- **Tech**: Next.js / Mapbox
+- **Purpose**: Public-facing web map for searching, checking audit histories, and reviewing records.
 
-1. **Register** (React Native, offline‑first)
-Purpose: Main workflow interface for registration and record updates.
+### 3. Landblock Investor (Web)
+- **Tech**: Next.js
+- **Purpose**: KYC-gated portal for fractional ownership and property token management.
 
-2. **Explorer** (Next.js, public verification)
-Purpose: Discovery and inspection interface for parcel and record visibility.
+### 4. Privacy Verifier (Web)
+- **Tech**: Next.js with ZKP
+- **Purpose**: Verify identity and record claims using zero-knowledge proofs without revealing underlying data.
 
-3. **Investor** (tokenized property access)
-Purpose: Investor-oriented interface for evaluating relevant land-linked opportunities and status.
+## The Connection (L2–L3)
 
-## How they connect
-
-- Apps call service and API layers.
-- Service and API layers invoke module logic.
-- Module outputs become the source of truth for system state and history.
+- **L2 (Storage)**: Apps store documents on **IPFS/Filecoin** and get back a CID. Only the CID is anchored on-chain.
+- **L3 (Indexing)**: An off-chain indexer reads Solidity contract events from Polygon PoS and builds LADM-aligned read models (spatial_units, ba_units, rrrs, parties, federation_proofs) in PostgreSQL. Apps query the indexer's REST/GraphQL API, not the blockchain directly.
 
 ---
 

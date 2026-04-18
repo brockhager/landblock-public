@@ -1,39 +1,45 @@
 # How Landblock Works
 
-This is a simplified end-to-end view.
+Landblock uses a three-layer federation architecture and a tiered adoption model that lets registries join at their own pace — from simple proof publication to full cross-registry interoperability.
 
-## 1. A user or authority signs in
+## The Three-Layer Architecture
 
-A participant enters through a front-end application with an authenticated identity.
+1. **Global Directory** (`RegistryDirectory.sol`) — An on-chain registry of registries. Any participant can discover and verify any other registry in the federation.
+2. **Federation Protocol** (`Federation.sol`) — Cross-registry verification and cryptographic proof exchange. Registries can verify each other's records without needing to agree on data formats.
+3. **Registry Layer** — Each existing registry publishes proofs through the federation, or new registries can use the Landblock **Registry Template** for LADM-compliant record management from day one.
 
-## 2. A parcel workflow is started
+## Conformance Tiers
 
-A registration, update, transfer, or review action is initiated.
+Registries join Landblock at one of three tiers, progressing as trust and capability grow:
 
-## 3. Evidence is attached and validated
+### Tier 1: Mirror Mode
+The existing government registry publishes cryptographic proofs of its records to the blockchain. This creates an immutable **audit trail** that prevents "silent" alteration of old records. Only SpatialUnit proofs are required. No cooperation from other registries is needed.
 
-Relevant documentation and verification artifacts are linked to the case.
+### Tier 2: Verified
+Cross-registry verification begins. The registry publishes both SpatialUnit and BAUnit proofs, enabling bilateral verification agreements with other registries in the federation.
 
-## 4. Core modules process state changes
+### Tier 3: Full
+Complete LADM interoperability. All record types (SpatialUnit, BAUnit, RRR, Party) are published. Identity resolution and evidence exchange across registries are fully supported.
 
-The protocol modules coordinate record updates, ownership state, dispute status, and related transaction handling.
+## The Commitment Model
 
-## 5. The resulting state is viewable
+At every tier, Landblock follows the **"No Land Data On Chain"** design invariant:
 
-Authorized users can inspect status and history through the appropriate application interfaces.
+1. **Assertion**: An authority makes a claim about a record (e.g., a registry records a parcel transfer).
+2. **Commitment**: The system generates a cryptographic hash (CID) of the record data.
+3. **Anchor**: That hash, along with metadata (authority, timestamp, scope), is recorded to the **Polygon PoS** blockchain (~2s finality, near-zero fees).
+4. **Verification**: Anyone can confirm the hash matches the original off-chain document, proving the record existed at that time and has not been tampered with.
 
-## Conceptual architecture view
+A Landblock record means: *"This authority, at this timestamp, made this claim about this record, supported by this evidence."* It does **not** mean the claim is legally correct — that determination remains with courts and governments.
 
-- Front-end apps: role-specific user experiences
-- Services and APIs: orchestration and policy enforcement
-- Protocol modules: canonical domain behavior and records
-- Data and storage layers: persistence, retrieval, and auditability
+## Bitemporal Versioning
 
-## Why this model is useful
+Every record carries three time dimensions:
+- **Valid time**: When the registry says the event occurred (registry-asserted).
+- **System time**: When Landblock recorded it (UTC, protocol-set).
+- **Block timestamp**: When Polygon confirmed it on-chain.
 
-- Clear separation of responsibilities
-- Better traceability of who changed what and why
-- Easier integration of policy, governance, and technical controls
+Corrections are never deletions — they create new records with a `supersedes` reference to the prior version. The full history is always preserved.
 
 ---
 

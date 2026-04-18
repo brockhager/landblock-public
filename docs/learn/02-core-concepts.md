@@ -1,51 +1,36 @@
 # Core Concepts
 
-This page explains the basic ideas you need before looking at architecture details.
+Before looking at architecture, it's important to understand the building blocks of the Landblock Protocol. Landblock follows the **ISO 19152 Land Administration Domain Model (LADM)**, the international standard for structuring land information.
 
-## Parcel
+## The LADM Data Model
 
-A parcel is a unit of land represented in the system with identifying details and boundaries.
+The canonical traversal path in Landblock is:
 
-## Identity
+> **SpatialUnit → BAUnit → RRR → Party**
 
-An identity represents a person, organization, or authority interacting with the platform.
+### 1. SpatialUnit (The Where)
+A SpatialUnit represents a unit of land or water. Landblock does not store actual coordinates on-chain. Instead, we store a **Boundary Hash** — a cryptographic fingerprint of the geometry that proves its integrity without exposing its location. Spatial identity is managed through the **Coords** system: L1 immutable coordinate URIs serve as authoritative spatial identifiers, with L2 handles for human-readable references.
 
-Landblock identity flows are designed to support trusted verification while limiting unnecessary data exposure. Uses SpruceID DIDs with tiered attestations.
+### 2. BAUnit (The What)
+A Basic Administrative Unit (BAUnit) represents the legal or administrative grouping of one or more SpatialUnits. It is the mediator between physical space and legal rights — you can never go directly from a SpatialUnit to a Party. The BAUnit enforces this separation.
 
-## Evidence
+### 3. RRR (The Rights)
+Rights, Restrictions, and Responsibilities (RRR) describe what can be done with a BAUnit. These include ownership rights, use restrictions, and administrative responsibilities. Share totals on a BAUnit can never exceed 100% (plus 1 basis point tolerance). RRRs are managed by `RRRRegistry.sol`.
 
-Evidence is supporting material tied to a parcel or claim, such as documents, images, or verification artifacts.
+### 4. Party (The Who)
+A Party represents a person or organization. Landblock uses **Decentralized Identifiers (DIDs)** via SpruceID to manage identities. This allows users to prove things about themselves (like having a government-verified ID) without revealing their personal data on the ledger. Identity tiers:
+- **Tier 1**: Self-asserted
+- **Tier 2**: Community-verified (3 witnesses)
+- **Tier 3**: Authority-verified (government/court — highest legal weight)
 
-Evidence is stored off‑chain (IPFS) but cryptographically bound on‑chain.
+### 5. Evidence (The Proof)
+Evidence is supporting material — like a deed PDF, a survey, or a witness signature. We convert evidence into **CIDs** (Content Identifiers) via IPFS/Filecoin. The protocol only "anchors" these CIDs on-chain; the actual files stay in secure off-chain storage managed by `EvidenceStore.sol`.
 
-## Dispute
+### 6. Dispute (The Status)
+When two parties claim overlapping SpatialUnits, a **Dispute Record** is opened on-chain. This transparency prevents fraudulent transfers while the conflict is resolved by the appropriate local authority (court or government). The protocol marks disputes — it never adjudicates them.
 
-A dispute is a formal record that ownership, boundaries, or claim validity is contested.
-
-Disputes are recorded as lifecycle events. Disputes are tracked so reviewers can see process status, evidence, and outcomes.
-
-## Property Token
-
-A property token is a digital representation linked to parcel state and ownership rights inside the system model.
-
-## Gas and Transaction Fees
-
-Operational actions in protocol systems usually require transaction fees. Landblock includes a gas station component to simplify fee handling in supported flows.
-
-## Append-Only Records
-
-Landblock uses immutable claims, not mutable state. All records are append-only parcel assertions.
-
-## Mirror Mode
-
-A mode where governments can publish cryptographic proofs of their land registries daily, allowing incremental adoption without disrupting workflows.
-
-## Applications vs Protocol Modules
-
-- Protocol modules define core system behavior and records (9 Solidity modules: registry, identity, evidence, disputes, tokens, gas station).
-- Front-end applications provide user interfaces for specific workflows (Register app, Explorer app, Investor app).
-
-Think of modules as the engine, and apps as dashboards and controls.
+### 7. Federation (The Network)
+Landblock is a federation of registries. Each registry retains full sovereignty and publishes cryptographic proofs that other registries can verify. No registry can override another. Contested territories across jurisdictions are marked as disputed, never politically adjudicated by the protocol.
 
 ---
 
