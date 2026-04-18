@@ -52,16 +52,15 @@ repository and is not open source.
 Landblock is under active development.
 
 **✅ Completed**
-- Governance constitution ratified
+- Governance constitution ratified (v0.4.5)
+- Two-token model established: LGT (governance) + LDBK (utility)
 - Founding multisig live on Polygon Amoy
-- 8 of 13 foundational ADRs accepted
-- Phase 1–2 complete
+- Core federation contracts complete
+- Phase 1–3 complete
 
 **🔄 Active (Critical Path)**
-- Phase 3: Final 5 foundational ADRs (0009–0016)
-- Phase 4: Turborepo monorepo scaffolding
-- Foundry test environment stabilization
-- Indexer + offline sync design
+- Phase 4+: Full federation functions, subgraph indexing, security audit preparation
+- Subgraph indexing complete
 
 **⏭️ Next Major Gates**
 - Testnet contract deployment sequence
@@ -74,8 +73,6 @@ Public materials may evolve as the project matures.
 Implementation details remain private.
 
 ---
-
-## Learn More
 
 ## Learn More
 

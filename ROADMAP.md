@@ -12,16 +12,17 @@ This roadmap represents **intent**, not commitment.
 - Risk analysis
 - Controlled testing
 
-## Phase 3 – External Engagement 🔄 Active
-- Final 5 foundational ADRs (0009–0016)
-- Expanded documentation
-- Select collaborations
-- Public updates
+## Phase 3 – Core Protocol ✅ Completed
+- Governance constitution ratified (v0.4.5)
+- Two-token model established (LGT + LDBK)
+- Core protocol contracts complete
+- Founding multisig live on testnet
 
-## Phase 4 – Implementation Foundations 🔄 Active
-- Turborepo monorepo scaffolding
-- Foundry test environment stabilization
-- Indexer + offline sync design
+## Phase 4 – Federation & Indexing 🔄 Active
+- Full federation functions
+- Subgraph indexing (complete)
+- Registry integration layer
+- Offline sync design
 
 ## Phase 5 – Testnet Deployment ⏭️ Next
 - Testnet contract deployment sequence
