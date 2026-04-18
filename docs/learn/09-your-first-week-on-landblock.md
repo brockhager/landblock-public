@@ -3,7 +3,7 @@
 Welcome to the Landblock community! Whether you're a citizen, a surveyor, a registry official, or a steward, your first week is about understanding the protocol and establishing your digital presence.
 
 ## Day 1: Understanding the Protocol
-Read the [Core Concepts](02-core-concepts.md) and understand the LADM data model (`SpatialUnit → BAUnit → RRR → Party`). Remember that Landblock is a verification and federation layer, not a legal authority. The [Design Invariants](../../03-design/DESIGN-INVARIANTS.md) define what the protocol will never do.
+Read the [Core Concepts](02-core-concepts.md) and understand the LADM data model (`SpatialUnit → BAUnit → RRR → Party`). Remember that Landblock is a verification and federation layer, not a legal authority.
 
 ## Day 2: Create Your Identity
 Download the **Register App** and create your **Tier 1 (Self-Asserted) DID** via SpruceID. This is your digital identity for everything on the platform. Your DID is registered in `IdentityRegistry.sol` — no cryptocurrency needed thanks to the ERC-4337 Paymaster.
@@ -22,7 +22,7 @@ If you have a formal government deed or survey, submit it as **Evidence** throug
 - Try the **Privacy Verifier** app to see how zero-knowledge proofs let you verify claims without exposing underlying data.
 
 ## Day 7: Understand Governance
-Read the [Constitution](../../07-governance/constitution/CONSTITUTION_v0.4.5.md) to understand what the DAO governs (protocol software, schemas, evidence standards) and what it explicitly does not (land ownership, disputes, legal outcomes). Follow the Founding Stewards and consider how you might participate as the protocol transitions to LGT-based Aragon DAO governance.
+Read the [Constitution](https://github.com/brockhager/landblock-public/blob/main/CONSTITUTION.md) to understand what the DAO governs (protocol software, schemas, evidence standards) and what it explicitly does not (land ownership, disputes, legal outcomes). Follow the Founding Stewards and consider how you might participate as the protocol transitions to LGT-based Aragon DAO governance.
 
 ---
 

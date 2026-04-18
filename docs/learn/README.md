@@ -23,12 +23,3 @@ Welcome to the **Learn** section of the Landblock Core repository. These documen
 ## 🏛️ Governance
 
 Landblock is a mission-driven protocol governed by its **Constitution** and the **Founding Steward Multi-Sig** (Gnosis Safe on Polygon PoS). The governance path runs from the current Proto-DAO through an Aragon DAO transition with LGT token voting, and ultimately to full on-chain governance. Trust is established not by a single authority, but by the mathematical security of the Polygon PoS blockchain, the LADM-compliant data model, and the transparency of the audit trail.
-
----
-
-## 🔍 Navigation
-
-- [Go to Architecture Overview](../../03-design/architecture/overview.md)
-- [Go to Decision Records (ADRs)](../../05-decisions/README.md)
-- [Go to Implementation Guide](../../04-implementation/README.md)
-- [Go to Whitepaper](../../whitepaper/01-introduction.md)
