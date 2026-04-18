@@ -1,42 +1,43 @@
-# Landblock Roadmap
+# Roadmap
 
-This roadmap represents **intent**, not commitment.
+Landblock's development follows an 8-phase plan, designed for incremental, sovereignty-respecting adoption. We're currently in Phase 2, with live testnet deployments on Polygon Amoy.
 
-## Phase 1 – Constitution Review ✅ Completed
-- Constitution v0.4.5 ratified
-- Governance principles established
+## Phase 1: Constitution Review ✅ Complete
+- Ratified v0.4.5 Constitution
+- Established governance principles
 
-## Phase 2 – Governance & DAO Setup 🔄 Active
-- Aragon governance setup
-- LGT (ERC20Votes) and LDBK (utility ERC-20) tokens
-- Amoy testnet deploy (April 8, 2026)
-- SAFE multisig rotation pending
+## Phase 2: Governance & DAO Setup 🔄 Active
+- Aragon governance on Polygon
+- LGT (governance token) and LDBK (utility token) deployment
+- Founding multisig live on Amoy testnet
+- Amoy deployments: LandblockGovernance at 0x65FBa64d0E9a443fA4165D7d77252eFDdD637dEb, DummyAdminSurface at 0x15561ca6726c2DBe3631Ef4Fb4ff9730bC80C257
 
-## Phase 3 – Core Federation Contracts ⏭️ Next
+## Phase 3: Core Federation Contracts ⏳ Upcoming
 - Federation protocol contracts
 - Mirror Mode implementation
-- Cross-jurisdiction verification
 
-## Phase 4 – Subgraph Indexing ⏭️ Next
-- The Graph integration
-- Off-chain data indexing
+## Phase 4: Full Federation Functions + Subgraph ⏳ Upcoming
+- Cross-registry verification
+- The Graph indexing on Polygon
 
-## Phase 5 – Federation Liaison Service ⏭️ Next
+## Phase 5: Federation Liaison Service ⏳ Upcoming
 - Three-tier query routing
-- Tiered disclosure (public/restricted/sealed)
+- AI-automated/facilitated/escalated tiers
 
-## Phase 6 – Registry Template + Tenure Conversion Workflow ⏭️ Next
-- Government registry integration
+## Phase 6: Registry Template + Tenure Conversion Workflow ⏳ Upcoming
+- Government registry integration template
 - Tenure conversion processes
 
-## Phase 7 – Peru Pilot + Audit ⏭️ Next
+## Phase 7: Peru Pilot + Audit ⏳ Upcoming
 - SUNARP Mirror Mode pilot
 - COFOPRI Tenure Conversion Workflow
 - Independent security audit
 
-## Phase 8 – Full Governance + CoordsApp Integration ⏭️ Next
+## Phase 8: Full Governance + CoordsApp Integration ⏳ Upcoming
 - Aragon DAO activation
 - CoordsApp L1 URIs integration
-- Bitemporal versioning
+- Mainnet launch
 
-Details may change as the project evolves.
+Live URLs: [landblock.app](https://landblock.app), [explorer.landblock.app](https://explorer.landblock.app), [investor.landblock.app](https://investor.landblock.app)
+
+→ Next: Explore Developer Docs (coming soon)
