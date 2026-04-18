@@ -52,22 +52,18 @@ repository and is not open source.
 Landblock is under active development.
 
 **✅ Completed**
-- Governance constitution ratified (v0.4.5)
-- Two-token model established: LGT (governance) + LDBK (utility)
-- Founding multisig live on Polygon Amoy
-- Core federation contracts complete
-- Phase 1–3 complete
+- Constitution v0.4.5 ratified
+- Governance & DAO setup (Phase 2): Aragon governance, LGT + LDBK tokens, Amoy testnet deploy (April 8, 2026)
+- Core federation contracts (Phase 3)
 
-**🔄 Active (Critical Path)**
-- Phase 4+: Full federation functions, subgraph indexing, security audit preparation
-- Subgraph indexing complete
+**🔄 Active**
+- Subgraph indexing (Phase 4)
+- Federation Liaison Service (Phase 5)
 
-**⏭️ Next Major Gates**
-- Testnet contract deployment sequence
-- Independent security audit
-- Mainnet launch
-- Government pilot (Mirror Mode)
-- Aragon DAO activation
+**⏭️ Next**
+- Registry Template + Tenure Conversion Workflow (Phase 6)
+- Peru pilot + audit (Phase 7)
+- Full governance + CoordsApp integration (Phase 8)
 
 Public materials may evolve as the project matures.  
 Implementation details remain private.
